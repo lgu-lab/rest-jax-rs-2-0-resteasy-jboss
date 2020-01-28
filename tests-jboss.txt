@@ -1,0 +1,36 @@
+TEST #1 : KO
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-servlet-initializer</artifactId>
+			<version>3.1.4.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>3.1.4.Final</version>
+		</dependency>
+		
+		DEPLOY WAR : OK
+        JBOSS CONSOLE : resources NOT visible		
+		TEST : KO (NOT FOUND ) 
+		
+		
+TEST #2 : OK
+		
+       <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        WAR : 7k (no lib) 
+        DEPLOY WAR : OK
+        JBOSS CONSOLE : resources visible in "deployment / subsystem / jaxrs / rest-resource"
+        TEST : 
+        http://localhost:8080/rest-jax-rs-2-resteasy-0.0.1-SNAPSHOT/api/message/aaaa  :  OK
+        http://localhost:8080/rest-jax-rs-2-resteasy-0.0.1-SNAPSHOT/api/hello/bbb  :  OK
+        
+         
+        
